@@ -1,0 +1,24 @@
+body{
+    margin: 0 6vw;
+    padding: 0 2vw;
+}
+video{
+    float: left;
+    width: 80vw;
+    height: 45vw;
+}
+#v1{
+    display: inline-block;
+}
+#v2{
+    display: none;
+}
+button{
+    margin: 0 18vw 0 18vw;
+}
+#addcom{
+    margin:0;
+}
+#comment_add{
+    margin: 0 auto;
+}
