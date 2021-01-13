@@ -1,3 +1,11 @@
+<?php
+    require_once "pdo.php";
+    $id = $_GET["id"];
+    $stmt = $pdo->query("SELECT Video_Name FROM perspective WHERE Video_Group = $id");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $Vid1 = htmlentities($rows[0]);
+    $Vid2 = htmlentities($rows[1]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +22,8 @@
 <body>
     <div id="container">
 
-        <video src="Vid1.mp4" type="video/mp4" autoplay id="v1" onclick="V1(); return false;"></video>
-        <video src="Vid2.mp4" type="video/mp4" autoplay id="v2" onclick="V2(); return false;"></video>
+        <video src="<?=$Vid1?>" type="video/mp4" autoplay id="v1" onclick="V1(); return false;"></video>
+        <video src="<?=$Vid2?>" type="video/mp4" autoplay id="v2" onclick="V2(); return false;"></video>
         <button id="control" onclick="Toggle()"><img
                 src="https://cdn2.iconfinder.com/data/icons/simple-ui-games/512/1-128.png" width="30vw"></button>
 
