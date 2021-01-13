@@ -1,10 +1,10 @@
 <?php
     require_once "pdo.php";
     $id = $_GET["id"];
-    $stmt = $pdo->query("SELECT Video_Name FROM perspective WHERE Video_Group = $id");
+    $stmt = $pdo->query("SELECT Video_Name FROM videos WHERE Video_Group = $id");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $Vid1 = htmlentities($rows[0]);
-    $Vid2 = htmlentities($rows[1]);
+    $Vid1 = htmlentities($rows[0]['Video_Name']);
+    $Vid2 = htmlentities($rows[1]['Video_Name']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
